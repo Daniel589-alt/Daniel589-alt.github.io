@@ -7,43 +7,85 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <title>Document</title>
     <style>
-/* Sección de historia */
-.historia {
-    position: relative;
-    background: url('img/wallpaper.jpg') no-repeat center center/cover;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .historia {
+            position: relative;
+            background: url('img/wallpaper.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: backgroundMove 10s infinite alternate ease-in-out;
+        }
 
-/* Capa oscura para mejorar la legibilidad del texto */
-.historia-overlay {
-    background: rgba(0, 0, 0, 0.9); /* Efecto de oscurecimiento */
-    padding: 50px;
-    border-radius: 15px;
-    max-width: 900px;
-}
+        /* Capa oscura para mejorar la legibilidad del texto */
+        .historia-overlay {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 50px;
+            border-radius: 15px;
+            max-width: 900px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
 
-/* Títulos épicos */
-.historia h2 {
-    font-size: 3em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    font-weight: bold;
-    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
-}
+        /* Títulos épicos con entrada desde la izquierda */
+        .historia h2 {
+            font-size: 3em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideInLeft 1s ease-out 0.5s forwards;
+        }
 
-/* Párrafos estilizados */
-.historia p {
-    font-size: 1.4em;
-    line-height: 1.8;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    margin-bottom: 15px;
-}
+        /* Párrafos estilizados con entrada desde abajo */
+        .historia p {
+            font-size: 1.4em;
+            line-height: 1.8;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            margin-bottom: 15px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out 1s forwards;
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes backgroundMove {
+            from {
+                background-position: center top;
+            }
+            to {
+                background-position: center bottom;
+            }
+        }
+
 
 
     </style>
@@ -71,22 +113,24 @@
         </div>
       </nav>
 
+    <section id="historia-avengers" class="historia">
+        <div class="historia-overlay">
+            <div class="historia-contenido">
+                <h2>La Historia de los Avengers</h2>
+                <p>
+                    Los Avengers nacieron como un equipo de héroes reunidos por Nick Fury para enfrentar amenazas que ningún individuo podría manejar solo. 
+                    Desde su primera formación con Iron Man, Thor, Hulk, Ant-Man y Wasp, han evolucionado enfrentando desafíos cada vez más grandes.
+                </p>
+                <p>
+                    Han luchado contra villanos como Loki, Ultrón y Thanos, protegiendo al mundo de la destrucción. 
+                    Su historia es una de sacrificio, valentía y trabajo en equipo, demostrando que incluso los más poderosos necesitan unirse por un bien mayor.
+                </p>
+            </div>
+        </div>
+    </section>
 
 </body>
-<section id="historia-avengers" class="historia">
-    <div class="historia-overlay">
-        <div class="historia-contenido">
-            <h2>La Historia de los Avengers</h2>
-            <p>
-                Los Avengers nacieron como un equipo de héroes reunidos por Nick Fury para enfrentar amenazas que ningún individuo podría manejar solo. 
-                Desde su primera formación con Iron Man, Thor, Hulk, Ant-Man y Wasp, han evolucionado enfrentando desafíos cada vez más grandes.
-            </p>
-            <p>
-                Han luchado contra villanos como Loki, Ultrón y Thanos, protegiendo al mundo de la destrucción. 
-                Su historia es una de sacrificio, valentía y trabajo en equipo, demostrando que incluso los más poderosos necesitan unirse por un bien mayor.
-            </p>
-        </div>
-    </div>
-</section>
+
+
 
 </html>

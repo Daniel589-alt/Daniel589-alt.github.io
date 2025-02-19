@@ -6,6 +6,113 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <title>Document</title>
+    <style>
+/* Sección de Spider-Man */
+.spiderman {
+    position: relative;
+    background: url('img/spider3.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Capa oscura para mejorar legibilidad */
+.spiderman-overlay {
+    background: rgba(0, 0, 0, 0.7); /* Oscurece el fondo */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenedor de texto e imagen */
+.spiderman-container {
+    display: flex;
+    max-width: 1100px;
+    width: 90%;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Estilos para el texto */
+.spiderman-texto {
+    flex: 1;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+.spiderman-texto h2 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.spiderman-texto p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Botón de más información */
+.btn-spiderman {
+    display: inline-block;
+    background: red;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-spiderman:hover {
+    background: #c90000;
+}
+
+/* Imagen de Spider-Man */
+.spiderman-imagen {
+    flex: 1;
+    text-align: center;
+    animation: fadeInRight 1s ease-in-out;
+}
+
+.spiderman-imagen img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0px 0px 20px rgba(255, 0, 0, 0.7));
+}
+
+/* Animaciones */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -30,4 +137,26 @@
         </div>
       </nav>
 </body>
+<section id="spiderman" class="spiderman">
+    <div class="spiderman-overlay">
+        <div class="spiderman-container">
+            <div class="spiderman-texto">
+                <h2>Spider-Man: El Amistoso Vecino</h2>
+                <p>
+                    Peter Parker, un joven con una vida aparentemente normal, obtuvo habilidades sobrehumanas tras ser mordido por una araña radiactiva.
+                    Desde entonces, se ha convertido en Spider-Man, protegiendo la ciudad de Nueva York con su increíble agilidad, fuerza y sentido arácnido.
+                </p>
+                <p>
+                    A lo largo de su historia, ha enfrentado enemigos icónicos como el Duende Verde y Venom, mientras lucha por equilibrar su vida personal y su responsabilidad como héroe.
+                </p>
+                <a href="https://es.wikipedia.org/wiki/Spider-Man" class="btn-spiderman">Más sobre Spider-Man</a>
+            </div>
+            <div class="spiderman-imagen">
+                <img src="img/spider2.jpg" alt="Spider-Man">
+            </div>
+        </div>
+    </div>
+</section>
+
+
 </html>
